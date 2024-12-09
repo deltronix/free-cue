@@ -1,0 +1,19 @@
+[package]
+name = "free-cue"
+version = "0.1.0"
+edition = "2021"
+authors = ["douwe@deltronix.nl"]
+
+[lib]
+name = "cuelib"
+path = "lib/lib.rs"
+
+[[bin]]
+name = "FreeCue"
+path = "src/bin.rs"
+
+[dependencies]
+relm4 = "0.9.1"
+relm4-components = "0.9.1"
+gtk = { version = "0.9.4", package = "gtk4" }
+uuid = { version = "1.11.0", features = ["v4", "fast-rng"] }
