@@ -12,16 +12,14 @@ impl CueNumber {
     pub fn new() -> CueNumber {
         Self(None, None)
     }
-}
-
-impl RelmListItem for CueNumber {
-    type Root = gtk::Box;
-    type Widgets = CueNumberWidgets;
-
-    fn setup(list_item: &gtk::ListItem) -> (Self::Root, Self::Widgets) {
-        todo!()
+    pub fn to_string(&self) -> String {
+        match self.0 {
+            None => "_".to_string(),
+            Some(n) => format!("{}", n),
+        }
     }
 }
+
 impl PartialOrd for CueNumber {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
         Some(self.cmp(other))
